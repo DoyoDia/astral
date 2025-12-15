@@ -60,9 +60,13 @@ jobs:
         run: |
           flutter pub get
 
+      - name: 🧹 清理构建缓存
+        run: |
+          flutter clean
+
       - name: 🛠️ 构建 Linux 应用
         run: |
-          flutter build linux --release
+          flutter build linux --release --target-platform linux-x64
 
       - name: 📦 打包应用
         run: |
